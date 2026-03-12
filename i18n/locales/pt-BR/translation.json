@@ -1,0 +1,67 @@
+{
+	"home": {
+		"title": "React Native Boilerplate",
+		"subtitle": "Base pronta com Expo Router, NativeWind e componentes reutilizáveis.",
+		"tip": "Dica: mantenha ícones em Lucide para tipagem perfeita no seu <Icon />."
+	},
+	"step1Title": "Comece pelo arquivo",
+	"step1": "Edite app/(tabs)/index.tsx para começar",
+	"step2Title": "Feedback instantâneo",
+	"step2": "Salve para ver as mudanças instantaneamente",
+	"step3Title": "Evolua o boilerplate",
+	"step3": "Construa suas funcionalidades em cima disso",
+	"browseDocs": "Abrir docs",
+	"viewGithub": "Ver no GitHub",
+	"appName": "Meu App",
+	"about": {
+		"title": "Sobre",
+		"description": "Este aplicativo foi desenvolvido com o objetivo de facilitar a criação de aplicações React Native utilizando Expo Router, NativeWind, internacionalização (i18n) e suporte a modo escuro. A proposta é fornecer uma base sólida, moderna e escalável para acelerar o desenvolvimento.",
+		"developedBy": "Desenvolvido por",
+		"url": "www.victorzarzar.com.br"
+	},
+	"tabs": {
+		"home": "Início",
+		"settings": "Configurações",
+		"about": "Sobre"
+	},
+	"common": {
+		"change": "Alterar",
+		"close": "Fechar",
+		"selected": "Selecionado"
+	},
+	"settings": {
+		"title": "Configurações",
+		"subtitle": "Personalize sua experiência.",
+		"appearance": {
+			"title": "Aparência",
+			"description": "Escolha como o app deve parecer."
+		},
+		"language": {
+			"title": "Idioma",
+			"description": "Defina o idioma do aplicativo."
+		}
+	},
+	"theme": {
+		"label": "Tema",
+		"hint": "Alternar entre claro e escuro."
+	},
+	"language": {
+		"label": "Idioma",
+		"current": "Atual: {{lang}}",
+		"selectTitle": "Selecionar idioma",
+		"selectSubtitle": "Escolha o idioma para o app.",
+		"ptBR": "Português (Brasil)",
+		"enUS": "English (US)",
+		"esES": "Español (España)"
+	},
+	"notFound": {
+		"headerTitle": "Oops!",
+		"code": "404",
+		"title": "Página não encontrada",
+		"description": "Não conseguimos encontrar esta tela. O link pode estar incorreto ou a rota não existe mais.",
+		"actions": {
+			"goHome": "Ir para o início",
+			"tryAgain": "Voltar e tentar novamente"
+		}
+	}
+}

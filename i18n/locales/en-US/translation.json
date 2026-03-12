@@ -1,0 +1,67 @@
+{
+	"home": {
+		"title": "React Native Boilerplate",
+		"subtitle": "Ready-to-use base with Expo Router, NativeWind, and reusable components.",
+		"tip": "Tip: keep icons in Lucide for perfect typing in your <Icon />."
+	},
+	"step1Title": "Start with the file",
+	"step1": "Edit app/(tabs)/index.tsx to get started",
+	"step2Title": "Instant feedback",
+	"step2": "Save to see changes instantly",
+	"step3Title": "Evolve the boilerplate",
+	"step3": "Build your features on top of it",
+	"browseDocs": "Open docs",
+	"viewGithub": "View on GitHub",
+	"appName": "My App",
+	"about": {
+		"title": "About",
+		"description": "This application was built to simplify the development of React Native apps using Expo Router, NativeWind, internationalization (i18n), and dark mode support. The goal is to provide a modern, scalable foundation to accelerate development.",
+		"developedBy": "Developed by",
+		"url": "www.victorzarzar.com.br"
+	},
+	"tabs": {
+		"home": "Home",
+		"settings": "Settings",
+		"about": "About"
+	},
+	"common": {
+		"change": "Change",
+		"close": "Close",
+		"selected": "Selected"
+	},
+	"settings": {
+		"title": "Settings",
+		"subtitle": "Customize your experience.",
+		"appearance": {
+			"title": "Appearance",
+			"description": "Choose how the app looks."
+		},
+		"language": {
+			"title": "Language",
+			"description": "Set the app language."
+		}
+	},
+	"theme": {
+		"label": "Theme",
+		"hint": "Toggle between light and dark."
+	},
+	"language": {
+		"label": "Language",
+		"current": "Current: {{lang}}",
+		"selectTitle": "Select language",
+		"selectSubtitle": "Choose the app language.",
+		"ptBR": "Portuguese (Brazil)",
+		"enUS": "English (US)",
+		"esES": "Spanish (Spain)"
+	},
+	"notFound": {
+		"headerTitle": "Oops!",
+		"code": "404",
+		"title": "Page not found",
+		"description": "We couldn't find this screen. The link might be wrong or the route no longer exists.",
+		"actions": {
+			"goHome": "Go to home",
+			"tryAgain": "Go back and try again"
+		}
+	}
+}
