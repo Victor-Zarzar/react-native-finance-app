@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { View } from "react-native";
+import { createPasswordResetToken } from "@/features/auth/services/userService";
 import { Button } from "@/shared/components/ui/button";
 import {
 	Card,
@@ -12,7 +13,6 @@ import {
 import { Input } from "@/shared/components/ui/input";
 import { Label } from "@/shared/components/ui/label";
 import { Text } from "@/shared/components/ui/text";
-import { createPasswordResetToken } from "@/features/auth/services/userService";
 
 export function ForgotPasswordForm() {
 	const [email, setEmail] = useState("");

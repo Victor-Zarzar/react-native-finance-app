@@ -2,6 +2,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { CheckCircle2, XCircle } from "lucide-react-native";
 import { useState } from "react";
 import { View } from "react-native";
+import { resetPassword } from "@/features/auth/services/userService";
 import {
 	Alert,
 	AlertDescription,
@@ -17,7 +18,6 @@ import {
 import { Input } from "@/shared/components/ui/input";
 import { Label } from "@/shared/components/ui/label";
 import { Text } from "@/shared/components/ui/text";
-import { resetPassword } from "@/features/auth/services/userService"
 
 export function ResetPasswordForm() {
 	const { token } = useLocalSearchParams<{ token: string }>();

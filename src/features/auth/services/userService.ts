@@ -1,8 +1,8 @@
 import { eq } from "drizzle-orm";
 import * as Crypto from "expo-crypto";
+import type { AuthUser } from "@/features/auth/types/auth";
 import { db } from "@/shared/db/client";
 import { passwordResetTokens, sessions, users } from "@/shared/db/schema";
-import type { AuthUser } from "@/features/auth/types/auth";
 
 async function hashPassword(password: string): Promise<string> {
 	return Crypto.digestStringAsync(

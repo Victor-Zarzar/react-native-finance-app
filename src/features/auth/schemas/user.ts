@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { gmailEmail, strongPassword } from "@/features/auth/hooks/rules";
+import { gmailEmail, strongPassword } from "@/shared/helpers/rules-form";
 
 export const signInSchema = z.object({
 	email: gmailEmail,

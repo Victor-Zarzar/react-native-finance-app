@@ -1,11 +1,11 @@
 {
 	"expo": {
-		"name": "react-native-boilerplate",
-		"slug": "react-native-boilerplate",
+		"name": "react-native-finance-app",
+		"slug": "react-native-finance-app",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/images/icon.png",
-		"scheme": "react-native-boilerplate",
+		"scheme": "react-native-finance-app",
 		"userInterfaceStyle": "automatic",
 		"newArchEnabled": true,
 		"splash": {
@@ -33,6 +33,13 @@
 			"expo-router",
 			"expo-localization",
 			[
+				"expo-file-system",
+				{
+					"supportsOpeningDocumentsInPlace": true,
+					"enableFileSharing": true
+				}
+			],
+			[
 				"expo-sqlite",
 				{
 					"enableFTS": true,
@@ -43,8 +50,7 @@
 					},
 					"ios": {
 						"customBuildFlags": [
-							"-DSQLITE_ENABLE_DBSTAT_VTAB=1",
-							"-DSQLITE_ENABLE_SNAPSHOT=1"
+							"-DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_SNAPSHOT=1"
 						]
 					}
 				}
