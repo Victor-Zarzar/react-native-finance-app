@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "reactnativefinanceapp.app"
-               BlueprintName = "reactnativefinanceapp"
-               ReferencedContainer = "container:reactnativefinanceapp.xcodeproj">
+               BuildableName = "FinanceApp.app"
+               BlueprintName = "FinanceApp"
+               ReferencedContainer = "container:FinanceApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "reactnativefinanceappTests.xctest"
-               BlueprintName = "reactnativefinanceappTests"
-               ReferencedContainer = "container:reactnativefinanceapp.xcodeproj">
+               BuildableName = "FinanceAppTests.xctest"
+               BlueprintName = "FinanceAppTests"
+               ReferencedContainer = "container:FinanceApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactnativefinanceapp.app"
-            BlueprintName = "reactnativefinanceapp"
-            ReferencedContainer = "container:reactnativefinanceapp.xcodeproj">
+            BuildableName = "FinanceApp.app"
+            BlueprintName = "FinanceApp"
+            ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactnativefinanceapp.app"
-            BlueprintName = "reactnativefinanceapp"
-            ReferencedContainer = "container:reactnativefinanceapp.xcodeproj">
+            BuildableName = "FinanceApp.app"
+            BlueprintName = "FinanceApp"
+            ReferencedContainer = "container:FinanceApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
