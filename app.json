@@ -1,7 +1,7 @@
 {
 	"expo": {
-		"name": "react-native-finance-app",
-		"slug": "react-native-finance-app",
+		"name": "Finance App",
+		"slug": "finance-app-react-native",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/images/icon.png",
@@ -15,14 +15,24 @@
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
-			"supportsTablet": true
+			"supportsTablet": true,
+			"bundleIdentifier": "com.anonymous.react-native-finance-app"
 		},
 		"android": {
 			"edgeToEdgeEnabled": true,
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/images/adaptive-icon.png",
 				"backgroundColor": "#ffffff"
-			}
+			},
+			"permissions": [
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.WRITE_EXTERNAL_STORAGE",
+				"android.permission.INTERNET",
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.WRITE_EXTERNAL_STORAGE",
+				"android.permission.INTERNET"
+			],
+			"package": "com.anonymous.reactnativefinanceapp"
 		},
 		"web": {
 			"bundler": "metro",
@@ -54,7 +64,8 @@
 						]
 					}
 				}
-			]
+			],
+			"expo-sharing"
 		],
 		"experiments": {
 			"typedRoutes": true

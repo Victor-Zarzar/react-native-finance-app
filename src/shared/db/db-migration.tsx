@@ -3,7 +3,7 @@ import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
 import { useSQLiteContext } from "expo-sqlite";
 import type React from "react";
 import { ActivityIndicator, Text, View } from "react-native";
-import migrations from "../../../drizzle/migrations";
+import migrations from "./migrations/migrations";
 import * as schema from "./schema";
 
 export function MigrationGate({ children }: { children: React.ReactNode }) {

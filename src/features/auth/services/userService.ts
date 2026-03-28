@@ -1,14 +1,68 @@
 import { eq } from "drizzle-orm";
 import * as Crypto from "expo-crypto";
-import type { AuthUser } from "@/features/auth/types/auth";
+import argon2 from "react-native-argon2";
 import { db } from "@/shared/db/client";
 import { passwordResetTokens, sessions, users } from "@/shared/db/schema";
+import type { AuthUser } from "../types/auth";
+
+function bytesToHex(bytes: Uint8Array): string {
+	return Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function createSaltHex(size = 16): Promise<string> {
+	const bytes = Crypto.getRandomBytes(size);
+	return bytesToHex(bytes);
+}
 
 async function hashPassword(password: string): Promise<string> {
-	return Crypto.digestStringAsync(
-		Crypto.CryptoDigestAlgorithm.SHA256,
-		password,
+	const saltHex = await createSaltHex(16);
+
+	const result = await argon2(password, saltHex, {
+		iterations: 2,
+		memory: 19 * 1024,
+		parallelism: 1,
+		hashLength: 32,
+		mode: "argon2id",
+		saltEncoding: "hex",
+	});
+
+	return result.encodedHash;
+}
+
+async function verifyPassword(
+	password: string,
+	encodedHash: string,
+): Promise<boolean> {
+	const parts = encodedHash.split("$");
+
+	if (parts.length < 6) {
+		return false;
+	}
+
+	const paramsPart = parts[3];
+	const saltBase64 = parts[4];
+
+	const params = Object.fromEntries(
+		paramsPart.split(",").map((entry) => {
+			const [key, value] = entry.split("=");
+			return [key, Number(value)];
+		}),
 	);
+
+	const saltHex = bytesToHex(
+		Uint8Array.from(atob(saltBase64), (char) => char.charCodeAt(0)),
+	);
+
+	const result = await argon2(password, saltHex, {
+		iterations: params.t,
+		memory: params.m,
+		parallelism: params.p,
+		hashLength: 32,
+		mode: "argon2id",
+		saltEncoding: "hex",
+	});
+
+	return result.encodedHash === encodedHash;
 }
 
 export async function getSessionUser(): Promise<AuthUser | null> {
@@ -44,7 +98,12 @@ export async function signUpUser(
 
 	const [user] = await db
 		.insert(users)
-		.values({ email, passwordHash, createdAt: now, avatar_url: "" })
+		.values({
+			email,
+			passwordHash,
+			createdAt: now,
+			avatar_url: "",
+		})
 		.returning();
 
 	await db.insert(sessions).values({
@@ -65,10 +124,13 @@ export async function signInUser(
 		.where(eq(users.email, email))
 		.limit(1);
 
-	if (!user) throw new Error("Invalid credentials");
+	if (!user) {
+		throw new Error("Invalid credentials");
+	}
 
-	const passwordHash = await hashPassword(password);
-	if (passwordHash !== user.passwordHash) {
+	const isValid = await verifyPassword(password, user.passwordHash);
+
+	if (!isValid) {
 		throw new Error("Invalid credentials");
 	}
 
@@ -94,10 +156,8 @@ export async function createPasswordResetToken(email: string): Promise<string> {
 
 	if (!user) return "ok";
 
-	const token = await Crypto.digestStringAsync(
-		Crypto.CryptoDigestAlgorithm.SHA256,
-		`${email}-${Date.now()}-${Math.random()}`,
-	);
+	const randomBytes = Crypto.getRandomBytes(32);
+	const token = bytesToHex(randomBytes);
 
 	await db
 		.delete(passwordResetTokens)
